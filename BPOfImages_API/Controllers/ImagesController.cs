@@ -34,8 +34,8 @@ namespace BPOfImages_API.Controllers
 
         /*UPLOAD*/
         [HttpPost("UploadImage")]
-        public async Task<IActionResult> UploadImage(IFormFile file, [FromForm] string description, [FromForm] string newName
-            , [FromForm] string location)
+        public async Task<IActionResult> UploadImage(IFormFile file, [FromForm] int id ,
+            [FromForm] string description, [FromForm] string newName, [FromForm] string location)
         {
             if (file == null || file.Length == 0 || file.ContentType == "images/jpeg")
             {
