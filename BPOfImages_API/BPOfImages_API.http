@@ -1,0 +1,6 @@
+@BPOfImages_API_HostAddress = http://localhost:5030
+
+GET {{BPOfImages_API_HostAddress}}/BPOfImages_API/
+Accept: application/json
+
+###
