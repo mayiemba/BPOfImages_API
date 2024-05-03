@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Images\fruits3.jpg">
+    <None Update="Images(BPO)\fruits3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

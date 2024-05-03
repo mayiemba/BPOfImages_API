@@ -7,12 +7,12 @@ namespace BPOfImages_API.Controllers
 
     public class ImagesController : ControllerBase
     {
-        /*GET*/
+   
         [HttpGet("GetImage")]
         public IActionResult GetImage()
         {
             // folder where the images are stored
-            string folderPath = "Images";
+            string folderPath = "Images(BPO)";
 
             string fileName = "fruits2.jpg";
 
@@ -32,9 +32,8 @@ namespace BPOfImages_API.Controllers
 
         /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-        /*UPLOAD*/
         [HttpPost("UploadImage")]
-        public async Task<IActionResult> UploadImage(IFormFile file, [FromForm] int id ,
+        public async Task<IActionResult> UploadImage(IFormFile file, [FromForm] string serialNumber ,
             [FromForm] string description, [FromForm] string newName, [FromForm] string location)
         {
             if (file == null || file.Length == 0 || file.ContentType == "images/jpeg")
@@ -47,7 +46,7 @@ namespace BPOfImages_API.Controllers
                 return BadRequest("Provide file name");
             }
 
-            string uploadsFolder = Path.Combine("Images");
+            string uploadsFolder = Path.Combine("Images(BPO)");
 
             // Ensure the uploads folder exists
             if (!Directory.Exists(uploadsFolder))
@@ -68,19 +67,19 @@ namespace BPOfImages_API.Controllers
 
         /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-        /*DELETE*/
+        
         [HttpDelete("DeleteImage")]
-        public IActionResult DeleteImage() 
+        public IActionResult DeleteImage()
         {
-            string folderPath = "Images";
+         string folderPath = "Images(BPO)";
 
-            string fileName = "$tomatoes1.jpg";
+         string fileName = "Mango(Sliced).jpeg";
 
-            string pathToFile = Path.Combine(folderPath, fileName);
+         string pathToFile = Path.Combine(folderPath, fileName);
 
-            System.IO.File.Delete(pathToFile);
+         System.IO.File.Delete(pathToFile);
 
-            return Ok("Image successfully deleted.");
-        }            
+          return Ok("Image successfully deleted.");
+        }
     }
 }
