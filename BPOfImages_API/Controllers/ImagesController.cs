@@ -73,7 +73,7 @@ namespace BPOfImages_API.Controllers
         {
          string folderPath = "Images(BPO)";
 
-         string fileName = "Mango(Sliced).jpeg";
+         string fileName = "fruits3.jpg";
 
          string pathToFile = Path.Combine(folderPath, fileName);
 
